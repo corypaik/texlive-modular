@@ -4,6 +4,7 @@ import os
 import stat
 import subprocess
 import sys
+import warnings
 
 IGNORED_DIRECTORIES = set(["doc", "source"])
 IGNORED_FILES = set(
@@ -54,7 +55,7 @@ def create_tarballs(path):
             for entry in collect_files(os.path.join(path, directory)):
                 files.append(os.path.join(directory, entry))
         if len(files) > (2000 if directories else 3000):
-            raise Exception(
+            warnings.warn(
                 "Package %s is too large. It has %d files." % (path, len(files))
             )
 
