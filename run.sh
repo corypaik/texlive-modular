@@ -2,8 +2,8 @@
 
 set -eu
 
-YEAR=2019
-DATE=20190410
+YEAR=2022
+DATE=20220321
 
 validate_checksum() {
 	filename=$1
